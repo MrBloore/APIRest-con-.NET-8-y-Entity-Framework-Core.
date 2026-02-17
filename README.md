@@ -1,12 +1,13 @@
-# APIRest-con-.NET-8-y-Entity-Framework-Core.
-Una API REST construida con .NET 8, Entity Framework Core y SQL Server para la gestión integral de proyectos y tareas, con front-end en HTML/CSS/JavaScript.
+# Proyectos y Tareas - API REST
+
+Una API REST construida con **.NET 8**, **Entity Framework Core** y **SQL Server** para la gestión integral de proyectos y tareas, con front end en **HTML/CSS/JavaScript**.
 
 ## Descripción General
 
 Para este proyecto, se atendieron todos los requerimientos solicitados de la integridad que debía tener la API Rest, así como de los Endpoints para visualización de 
 las Entidades solicitadas: Projectos y TaskItems.
 
-<img width="1919" height="405" alt="image" src="https://github.com/user-attachments/assets/dcbafbe2-ae9a-4e34-88ee-6e4d7dc073fe" />
+![alt text](image-2.png)
 
 ## Arquitectura del Proyecto y Decisiones Técnicas
 
@@ -68,7 +69,7 @@ ProjectosYTareas_APIREST/
   - Evitar borrar un proyecto si tiene tareas que no estén Completadas.
   - Finalizar un Proyecto sólo si todas las tareas están completadas.
 
-<img width="1191" height="861" alt="image" src="https://github.com/user-attachments/assets/83dd1789-f06d-485a-8a96-355f2ad1463d" />
+![alt text](image-3.png)
 
 **Gestión de Tareas**
 -CRUD Completo.
@@ -78,11 +79,9 @@ ProjectosYTareas_APIREST/
   - Evitar marcar tareas como Completadas si están Pendientes.
   - Evitar asignar tareas con fechas pasadas a la actual.
 
-<img width="1227" height="719" alt="image" src="https://github.com/user-attachments/assets/67a2258e-d5a8-44cb-9757-69ba00f0f372" />
 
-<img width="1038" height="873" alt="image" src="https://github.com/user-attachments/assets/8429f1f1-bc49-463b-b8a1-b9d659efe315" />
+![alt text](image-4.png)
 
-<img width="1046" height="868" alt="Captura de pantalla 2026-02-16 225249" src="https://github.com/user-attachments/assets/bd084acd-17b2-4823-9304-a3b51fe6a232" />
 
 ---
 
@@ -139,7 +138,6 @@ public class TaskItem
 
 Igualmente, estos estados están en otro documento, ya que en la entidad se encuentra solamente el enum.
 
-<img width="1074" height="576" alt="image" src="https://github.com/user-attachments/assets/ea7c5f6e-540f-48f6-92ed-6d84c495899d" />
 
 ## Estructura de Base de Datos
 
@@ -168,6 +166,3 @@ CREATE TABLE TaskItems (
     FOREIGN KEY (ProjectId) REFERENCES Projects(Id)
 );
 ```
-
-<img width="1896" height="812" alt="image" src="https://github.com/user-attachments/assets/67a74238-fff2-40eb-b8aa-cc753f2a030b" />
-

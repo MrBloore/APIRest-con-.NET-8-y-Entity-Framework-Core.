@@ -80,6 +80,12 @@ ProjectosYTareas_APIREST/
 
 <img width="1227" height="719" alt="image" src="https://github.com/user-attachments/assets/67a2258e-d5a8-44cb-9757-69ba00f0f372" />
 
+<img width="1038" height="873" alt="image" src="https://github.com/user-attachments/assets/8429f1f1-bc49-463b-b8a1-b9d659efe315" />
+
+<img width="1896" height="812" alt="image" src="https://github.com/user-attachments/assets/67a74238-fff2-40eb-b8aa-cc753f2a030b" />
+
+<img width="1046" height="868" alt="Captura de pantalla 2026-02-16 225249" src="https://github.com/user-attachments/assets/bd084acd-17b2-4823-9304-a3b51fe6a232" />
+
 ---
 
 ## Estructura de Entidades
@@ -165,5 +171,5 @@ CREATE TABLE TaskItems (
 );
 ```
 
-<img width="1896" height="812" alt="image" src="https://github.com/user-attachments/assets/67a74238-fff2-40eb-b8aa-cc753f2a030b" />
+
 

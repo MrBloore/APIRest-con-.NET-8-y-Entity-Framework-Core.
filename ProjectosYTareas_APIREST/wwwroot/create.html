@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación de Proyectos y Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Creación de Proyectos y Tareas</h1>
+
+        <!-- Formulario para creacion de proyectos.-->
+        <div class="form-section">
+            <h2>Crear Proyecto</h2>
+            <form id="projectForm">
+                <div class="form-group">
+                    <label for="projectName">Nombre del Proyecto *</label>
+                    <input type="text" id="projectName" name="name" required placeholder="Ej: Mi Proyecto">
+                </div>
+
+                <div class="form-group">
+                    <label for="projectDescription">Descripción *</label>
+                    <textarea id="projectDescription" name="description" required placeholder="Describe el proyecto..."></textarea>
+                </div>
+
+                <button type="submit">Crear Proyecto</button>
+                <div id="projectMessage" class="message"></div>
+            </form>
+        </div>
+
+        <!-- Formulario para creacion de tareas. -->
+        <div class="form-section">
+            <h2>Crear Tarea</h2>
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskProject">Proyecto *</label>
+                    <select id="taskProject" name="projectId" required>
+                        <option value="">Selecciona un proyecto...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="taskTitle">Título de la Tarea *</label>
+                    <input type="text" id="taskTitle" name="title" required placeholder="Ej: Implementar login">
+                </div>
+
+                <div class="form-group">
+                    <label for="taskDescription">Descripción *</label>
+                    <textarea id="taskDescription" name="description" required placeholder="Describe la tarea..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="taskPriority">Prioridad *</label>
+                        <select id="taskPriority" name="priority" required>
+                            <option value="1">Baja</option>
+                            <option value="2">Media</option>
+                            <option value="3">Alta</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="taskDueDate">Fecha Límite *</label>
+                    <input type="date" id="taskDueDate" name="dueDate" required>
+                </div>
+
+                <button type="submit">Crear Tarea</button>
+                <div id="taskMessage" class="message"></div>
+            </form>
+        </div>
+
+        <div style="text-align: center; padding: 20px;">
+            <a href="index.html" class="btn-link" style="background-color: #555;">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <script src="create.js"></script>
+</body>
+</html>

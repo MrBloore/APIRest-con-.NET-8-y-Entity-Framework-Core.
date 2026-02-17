@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminación de Proyectos y Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Eliminación de Proyectos y Tareas</h1>
+
+        <!-- Formulario para eliminar proyectos.-->
+        <div class="form-section">
+            <h2>Eliminar Proyecto</h2>
+            <form id="deleteProjectForm">
+                <div class="form-group">
+                    <label for="deleteProjectSelect">Selecciona Proyecto *</label>
+                    <select id="deleteProjectSelect" name="projectId" required>
+                        <option value="">Selecciona un proyecto...</option>
+                    </select>
+                </div>
+
+                <button type="submit" style="background-color: #dc3545;">Eliminar Proyecto</button>
+                <div id="deleteProjectMessage" class="message"></div>
+            </form>
+        </div>
+
+        <!-- Formulario para eliminar tareas.-->
+        <div class="form-section">
+            <h2>Eliminar Tarea</h2>
+            <form id="deleteTaskForm">
+                <div class="form-group">
+                    <label for="deleteTaskProjectSelect">Selecciona Proyecto *</label>
+                    <select id="deleteTaskProjectSelect" name="projectId" required>
+                        <option value="">Selecciona un proyecto...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="deleteTaskSelect">Selecciona Tarea *</label>
+                    <select id="deleteTaskSelect" name="taskId" required>
+                        <option value="">Selecciona una tarea...</option>
+                    </select>
+                </div>
+
+                <button type="submit" style="background-color: #dc3545;">Eliminar Tarea</button>
+                <div id="deleteTaskMessage" class="message"></div>
+            </form>
+        </div>
+
+        <div style="text-align: center; padding: 20px;">
+            <a href="index.html" class="btn-link" style="background-color: #555;">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <script src="delete.js"></script>
+</body>
+</html>

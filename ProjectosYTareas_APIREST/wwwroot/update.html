@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualización de Proyectos y Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Actualización de Proyectos y Tareas</h1>
+
+        <!-- Formulario para actualizar proyectos.-->
+        <div class="form-section">
+            <h2>Actualizar Proyecto</h2>
+            <form id="updateProjectForm">
+                <div class="form-group">
+                    <label for="updateProjectSelect">Selecciona Proyecto *</label>
+                    <select id="updateProjectSelect" name="projectId" required>
+                        <option value="">Selecciona un proyecto...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="updateProjectName">Nombre del Proyecto *</label>
+                    <input type="text" id="updateProjectName" name="name" required placeholder="Ej: Mi Proyecto">
+                </div>
+
+                <div class="form-group">
+                    <label for="updateProjectDescription">Descripción *</label>
+                    <textarea id="updateProjectDescription" name="description" required placeholder="Describe el proyecto..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="updateProjectStatus">Estado *</label>
+                    <select id="updateProjectStatus" name="status" required>
+                        <option value="1">Activo</option>
+                        <option value="2">Finalizado</option>
+                    </select>
+                </div>
+
+                <button type="submit">Actualizar Proyecto</button>
+                <div id="updateProjectMessage" class="message"></div>
+            </form>
+        </div>
+
+        <!-- Formulario para actualizar tareas.-->
+        <div class="form-section">
+            <h2>Actualizar Tarea</h2>
+            <form id="updateTaskForm">
+                <div class="form-group">
+                    <label for="updateTaskProjectSelect">Selecciona Proyecto *</label>
+                    <select id="updateTaskProjectSelect" name="projectId" required>
+                        <option value="">Selecciona un proyecto...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="updateTaskSelect">Selecciona Tarea *</label>
+                    <select id="updateTaskSelect" name="taskId" required>
+                        <option value="">Selecciona una tarea...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="updateTaskTitle">Título de la Tarea *</label>
+                    <input type="text" id="updateTaskTitle" name="title" required placeholder="Ej: Implementar login">
+                </div>
+
+                <div class="form-group">
+                    <label for="updateTaskDescription">Descripción *</label>
+                    <textarea id="updateTaskDescription" name="description" required placeholder="Describe la tarea..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="updateTaskStatus">Estado *</label>
+                        <select id="updateTaskStatus" name="status" required>
+                            <option value="1">Por hacer</option>
+                            <option value="2">En progreso</option>
+                            <option value="3">Completado</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="updateTaskPriority">Prioridad *</label>
+                        <select id="updateTaskPriority" name="priority" required>
+                            <option value="1">Baja</option>
+                            <option value="2">Media</option>
+                            <option value="3">Alta</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="updateTaskDueDate">Fecha Límite *</label>
+                    <input type="date" id="updateTaskDueDate" name="dueDate" required>
+                </div>
+
+                <button type="submit">Actualizar Tarea</button>
+                <div id="updateTaskMessage" class="message"></div>
+            </form>
+        </div>
+
+        <div style="text-align: center; padding: 20px;">
+            <a href="index.html" class="btn-link" style="background-color: #555;">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <script src="update.js"></script>
+</body>
+</html>

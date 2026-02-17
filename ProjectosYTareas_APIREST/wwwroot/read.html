@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Proyectos y Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Visualización de Proyectos y Tareas</h1>
+
+        <!-- Visualización de Proyecto -->
+        <div class="section-group">
+            <!-- Detalles de Proyecto -->
+            <div class="form-section">
+                <h2>Visualización de Proyecto</h2>
+                <div class="form-group">
+                    <label for="projectSelect">Selecciona un Proyecto *</label>
+                    <select id="projectSelect" name="projectId" required>
+                        <option value="">Selecciona un proyecto...</option>
+                    </select>
+                </div>
+
+                <div id="projectDetailsContainer" class="details-container" style="display: none;">
+                    <div class="details-content">
+                        <h3 id="projectName"></h3>
+                        <div class="detail-item">
+                            <strong>ID:</strong>
+                            <span id="projectId"></span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Descripción:</strong>
+                            <span id="projectDescription"></span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Estado:</strong>
+                            <span id="projectStatus"></span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Fecha de Creación:</strong>
+                            <span id="projectCreatedAt"></span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cantidad de Tareas:</strong>
+                            <span id="projectTaskCount"></span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Avance del Proyecto:</strong>
+                            <div class="progress-container">
+                                <div class="progress-bar" id="projectProgressBar" style="width: 0%;"></div>
+                            </div>
+                            <span id="projectProgressPercentage" style="font-weight: bold; color: #007bff;">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tareas del Proyecto Seleccionado -->
+            <div class="form-section">
+                <h2>Tareas del Proyecto Seleccionado</h2>
+                <div id="projectTasksContainer" style="display: none;">
+                    <div id="tasksListContainer">
+                        <!-- Las tareas se cargaran aqui -->
+                    </div>
+                </div>
+                <div id="noTasksMessage" style="display: none; padding: 20px; background-color: #f0f0f0; border-radius: 4px;">
+                    <p>Este proyecto no tiene tareas asignadas.</p>
+                </div>
+            </div>
+
+            <!-- Secció}on para visualizar detalles de una tarea especifica del proyecto -->
+            <div class="form-section">
+                <h2>Detalles de las Tareas del Proyecto</h2>
+                <div class="form-group">
+                    <label for="taskSelect">Selecciona una Tarea *</label>
+                    <select id="taskSelect" name="taskId" required>
+                        <option value="">Selecciona una tarea...</option>
+                    </select>
+                </div>
+
+                <div id="taskDetailsContainer" class="details-container" style="display: none;">
+                    <div class="details-content">
+                        <h3 id="taskTitle"></h3>
+                        <div class="detail-item">
+                            <strong>ID:</strong>
+                            <span id="taskId"></span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Proyecto:</strong>
+                            <span id="taskProjectName"></span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Descripción:</strong>
+                            <span id="taskDescription"></span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Estado:</strong>
+                            <span id="taskStatus"></span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Prioridad:</strong>
+                            <span id="taskPriority"></span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Fecha Límite:</strong>
+                            <span id="taskDueDate"></span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Fecha de Creación:</strong>
+                            <span id="taskCreatedAt"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visualizar Tareas Globales -->
+        <div class="form-section">
+            <h2 style="text-align: center;">Tareas Globales</h2>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <button id="loadAllTasksBtn" class="btn-link" style="background-color: #28a745;">Cargar Todas las Tareas Globales</button>
+            </div>
+
+            <!-- Filtros para Tareas Globales -->
+            <div id="globalTasksFiltersContainer" style="display: none; margin-bottom: 25px; padding: 15px; background-color: #f8f9fa; border-radius: 4px;">
+                <h3 style="margin-bottom: 15px; color: #333;">Filtros</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <!-- Filtro por Prioridad -->
+                    <div class="form-group">
+                        <label for="taskPriorityFilter">Filtrar por Prioridad:</label>
+                        <select id="taskPriorityFilter" name="priority">
+                            <option value="">Todas las Prioridades</option>
+                            <option value="1">Baja</option>
+                            <option value="2">Media</option>
+                            <option value="3">Alta</option>
+                        </select>
+                    </div>
+
+                    <!-- Filtro por Tareas Vencidas -->
+                    <div class="form-group">
+                        <label for="overduedTasksFilter">Mostrar Tareas Vencidas:</label>
+                        <select id="overduedTasksFilter" name="overdue">
+                            <option value="all">Todas las Tareas</option>
+                            <option value="overdue">Solo Tareas Vencidas</option>
+                            <option value="active">Solo Tareas Activas</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="allTasksContainer" style="display: none; margin-top: 20px;">
+                <div id="allTasksListContainer">
+                    <!-- Todas las tareas se cargaran aqui -->
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 20px;">
+            <a href="index.html" class="btn-link" style="background-color: #555;">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <script src="read.js"></script>
+</body>
+</html>
